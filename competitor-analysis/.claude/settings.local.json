@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"E:\\\\\" -type f -name \"*.md\" 2>/dev/null | xargs grep -l \"skill.creator\\\\|skill-creator\" 2>/dev/null | head -10)",
+      "Bash(python -m scripts.package_skill \"E:\\\\Softs\\\\Claude AI\\\\Skills\\\\competitor-analysis\" \"E:\\\\Softs\\\\Claude AI\\\\Skills\\\\competitor-analysis\")",
+      "Bash(where python3:*)",
+      "Bash(where py:*)",
+      "Bash(python3 -m scripts.package_skill \"E:\\\\Softs\\\\Claude AI\\\\Skills\\\\competitor-analysis\" \"E:\\\\Softs\\\\Claude AI\\\\Skills\\\\competitor-analysis\")",
+      "Bash(py -3 --version)",
+      "Bash(py -3 -m scripts.package_skill \"E:\\\\Softs\\\\Claude AI\\\\Skills\\\\competitor-analysis\" \"E:\\\\Softs\\\\Claude AI\\\\Skills\\\\competitor-analysis\")",
+      "Bash(PYTHONIOENCODING=utf-8 py -3 -m scripts.package_skill \"E:\\\\Softs\\\\Claude AI\\\\Skills\\\\competitor-analysis\" \"E:\\\\Softs\\\\Claude AI\\\\Skills\\\\competitor-analysis\")",
+      "Bash(py -3 -c ':*)",
+      "Bash(mkdir -p \"E:/Softs/Claude AI/Skills/competitor-analysis-workspace/iteration-1/vietnam-dairy-token-preserved/with_skill/outputs\")",
+      "Bash(mkdir -p \"E:/Softs/Claude AI/Skills/competitor-analysis-workspace/iteration-1/vietnam-dairy-token-preserved/without_skill/outputs\")",
+      "Bash(PYTHONIOENCODING=utf-8 py -3 generate_charts.py)"
+    ]
+  }
+}

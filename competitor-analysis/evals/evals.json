@@ -1,0 +1,11 @@
+{
+  "skill_name": "competitor-analysis",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want a competitor analysis for Vinamilk in the dairy industry in Vietnam. Compare against TH True Milk, Mộc Châu Milk, and Dutch Lady. Token-preserved mode please.",
+      "expected_output": "A competitor analysis report in Markdown + DOCX with charts, covering: Executive Summary, Industry Analysis (with competitive forces), Competitor Analysis (summary table + individual profiles for Vinamilk, TH True Milk, Mộc Châu Milk, Dutch Lady — without digital presence/online buzz), competitive positioning map, Issues & Opportunities, Strategic Recommendation with Ansoff Matrix, and Sources & References. Country Situation and Action Plan should be skipped.",
+      "files": []
+    }
+  ]
+}

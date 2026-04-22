@@ -1,0 +1,23 @@
+{
+  "skill_name": "overall-market-research",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Research the instant noodle market in Vietnam for me",
+      "expected_output": "Full market research report with all sections (Executive Summary, Country Situation, Industry Analysis with key players, Summary with risks, Strategic Recommendation, References). Should include charts, citations, comparison table, bubble chart, and three output formats (md, docx, pdf).",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "What's the cloud computing market like in Indonesia?",
+      "expected_output": "Full market research report. Should use B2B distribution channel fallback instead of Traditional/Modern Trade framework. Casual phrasing should still trigger the skill.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Should we expand our beverage business into Thailand?",
+      "expected_output": "Should ask for sub-segment clarification before proceeding (beverage is too broad). Casual phrasing should trigger the skill.",
+      "files": []
+    }
+  ]
+}

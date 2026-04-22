@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv \"C:/Users/me/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/7ddc838c-484d-401f-b4e2-5fd9cc82f4d9/bb903ebf-6a1a-4947-ae6d-89834a712626/skills/skill-creator/overall-market-research.skill\" \"E:/Softs/Claude AI/Skills/overall-market-research.skill\")",
+      "Read(//e/Softs/Claude AI/Skills/**)",
+      "Bash(cp \"E:/Softs/Claude AI/Skills/overall-market-research/SKILL.md\" \"E:/Softs/Claude AI/Skills/overall_market_research/SKILL.md\")",
+      "Bash(cp \"E:/Softs/Claude AI/Skills/overall-market-research/PROMPT_UNIVERSAL.md\" \"E:/Softs/Claude AI/Skills/overall_market_research/PROMPT_UNIVERSAL.md\")",
+      "Bash(cp \"E:/Softs/Claude AI/Skills/overall-market-research.skill\" \"E:/Softs/Claude AI/Skills/overall_market_research/overall-market-research.skill\")",
+      "Bash(powershell -Command \"Remove-Item 'overall_market_research.zip' -ErrorAction SilentlyContinue; Compress-Archive -Path 'overall_market_research/SKILL.md','overall_market_research/PROMPT_UNIVERSAL.md','overall_market_research/overall-market-research.skill','overall_market_research/evals/evals.json' -DestinationPath 'overall_market_research.zip' -Force\")",
+      "WebSearch",
+      "Bash(PYTHONIOENCODING=utf-8 python skill-creator/package_skill.py overall-market-research)",
+      "Bash(PYTHONIOENCODING=utf-8 python3 skill-creator/package_skill.py overall-market-research)",
+      "Bash(find . -name \"package_skill.py\")",
+      "Bash(PYTHONIOENCODING=utf-8 py scripts/package_skill.py overall-market-research)",
+      "Bash(PYTHONIOENCODING=utf-8 py \"E:/Softs/Claude AI/Skills/scripts/package_skill.py\" overall-market-research)",
+      "Bash(xxd)",
+      "Bash(python -c \"import zipfile; z = zipfile.ZipFile\\('overall-market-research.skill'\\); print\\('\\\\n'.join\\(z.namelist\\(\\)\\)\\)\")"
+    ]
+  }
+}
