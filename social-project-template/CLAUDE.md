@@ -6,10 +6,22 @@
 
 ## How Claude should navigate this project
 
-1. **Read this file first.** It is the source of truth for this project's structure, conventions, and overrides. If a section here conflicts with a skill's default behavior, this file wins.
+1. **Read this file first.** It is the source of truth for this project's structure, conventions, and overrides. If a section here conflicts with a skill's default behavior, this file wins — except when overridden live in chat (see precedence below).
 2. **Read everything in `_context/` next.** That folder holds the brand, audience, voice, and market context. Every skill needs it before doing any real work.
 3. **Project-level skills override global skills.** The skills in `.claude/skills/` are the source of truth for this project. If a global or plugin-installed skill with the same or overlapping name exists, prefer this project's version.
 4. **Follow delegations.** If a section below points to another file (e.g., "see `_sop/brand-voice.md`"), read that file and apply its rules.
+
+---
+
+## Override precedence
+
+When deciding how to behave, check instructions in this order — highest priority first:
+
+1. **Live user instructions in the current chat.** If the user types something that overrides a default for this run (e.g. "skip visuals this time", "use the creator-journey framework", "write to a custom folder"), honor it for the current run. This wins over both CLAUDE.md and SKILL.md.
+2. **CLAUDE.md `Overrides` section** (this file, below). Project-wide rules set by the user. Wins over SKILL.md defaults.
+3. **SKILL.md defaults.** Each skill's built-in behavior. Used when nothing higher overrides.
+
+Live chat instructions only apply to the current run — they do not modify CLAUDE.md or SKILL.md files. If the user wants a permanent change, they should add it to the `Overrides` section below.
 
 ---
 
@@ -88,7 +100,7 @@ Add one line per folder you want skills to know about. Example:
 
 ## Overrides
 
-Use this section to change any default behavior from a skill's `SKILL.md`. Overrides declared here win.
+Use this section to change any default behavior from a skill's `SKILL.md`. Overrides declared here win over `SKILL.md` defaults — but live user instructions in chat still win over both (see "Override precedence" above).
 
 <!--
 Examples:

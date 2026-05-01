@@ -18,6 +18,18 @@ Produce a **living reference document** named `platform-knowledge-base.md` that 
 
 ---
 
+## Override precedence
+
+When deciding how to behave, check instructions in this order — highest priority first:
+
+1. **Live user instructions in the current chat.** If the user types something that overrides a default for this run (e.g. "research only LinkedIn this time", "skip the autocomplete step", "save the file somewhere else"), honor it for the current run. This wins over both `CLAUDE.md` and this `SKILL.md`.
+2. **`CLAUDE.md` `Overrides` section.** Project-wide rules set by the user. Wins over this `SKILL.md`'s defaults.
+3. **This `SKILL.md`'s defaults.** Used when nothing higher overrides.
+
+Live chat instructions only apply to the current run — they do not modify any file.
+
+---
+
 ## Step 0 — Discover project layout (run first, every invocation)
 
 Before anything else, figure out where to read from and write to.
@@ -31,7 +43,7 @@ Before anything else, figure out where to read from and write to.
    - Declare where context, references, and outputs live.
    - Delegate to other files (e.g., "see `_sop/rules.md`") — read those too.
    - Mark additional folders (like `_sop/`, `templates/`) as relevant to this skill — respect them.
-   - Override any default in this SKILL.md — project-level instructions beat skill defaults.
+   - Override any default in this SKILL.md. Note: live chat instructions beat `CLAUDE.md` overrides, which beat these defaults.
 
 3. **Project-level skills override global skills.** If a global or plugin-installed skill shares this name, the version in `.claude/skills/social-platform-research/` is authoritative for this project.
 

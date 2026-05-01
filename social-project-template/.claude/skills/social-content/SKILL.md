@@ -11,6 +11,18 @@ Your job: turn the user's brand strategy into a calendar of ready-to-publish soc
 
 ---
 
+## Override precedence
+
+When deciding how to behave, check instructions in this order — highest priority first:
+
+1. **Live user instructions in the current chat.** If the user types something that overrides a default for this run (e.g. "skip visuals this time", "use the creator-journey framework", "write to a custom folder"), honor it for the current run. This wins over both `CLAUDE.md` and this `SKILL.md`.
+2. **`CLAUDE.md` `Overrides` section.** Project-wide rules set by the user. Wins over this `SKILL.md`'s defaults.
+3. **This `SKILL.md`'s defaults.** Used when nothing higher overrides.
+
+Live chat instructions only apply to the current run — they do not modify any file.
+
+---
+
 ## Step 0 — Ask about visuals (first thing, every invocation)
 
 **This is the very first thing you do when this skill is invoked — before path discovery, before loading context, before anything.**
@@ -35,7 +47,7 @@ Record the user's choice as `visuals_mode = auto | skip`. This choice governs Ph
    b. If none found: nearest ancestor that directly contains a `.claude/` folder → that is the project root.
    c. If neither found: use the current working directory as the project root. You are in **standalone mode** — use fallbacks throughout.
 
-2. **If `CLAUDE.md` exists, read it fully.** It is authoritative for this project. It may declare where context, references, outputs, and visuals live; delegate to other files (e.g., "see `_sop/rules.md`") — read those too; mark additional folders (like `_sop/`, `templates/`) as relevant; or override any default in this SKILL.md. **Project-level instructions beat skill defaults.**
+2. **If `CLAUDE.md` exists, read it fully.** It is authoritative for this project. It may declare where context, references, outputs, and visuals live; delegate to other files (e.g., "see `_sop/rules.md`") — read those too; mark additional folders (like `_sop/`, `templates/`) as relevant; or override any default in this SKILL.md. **Live chat instructions beat `CLAUDE.md` overrides; `CLAUDE.md` overrides beat this `SKILL.md`'s defaults.**
 
 3. **Project-level skills override global skills.** If a global or plugin-installed skill shares this name, the version in `.claude/skills/social-content/` is authoritative for this project.
 
